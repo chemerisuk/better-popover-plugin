@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>better-popover test page</title>
+    <script src="bower_components/better-dom/dist/better-dom.js"></script>
+    <script src="src/better-popover.js"></script>
+    <style>
+    #hpos, #vpos {
+        padding: 0.25em;
+        font-size: 1.5em;
+        width: 5em;
+        margin: 0.25em;
+    }
+
+    #test-area {
+        background: yellow;
+        height: 100%;
+        width: 17em;
+        margin: 25%;
+    }
+
+    [role=tooltip] {
+        background: red;
+        color: white;
+        padding: 0.25em;
+    }
+    </style>
+</head>
+<body>
+    <div id="test-area">
+        <select id="hpos" size="3">
+            <option value="left" selected>left</option>
+            <option value="center">center</option>
+            <option value="right">right</option>
+        </select>
+        <select id="vpos" size="3">
+            <option value="top">top</option>
+            <option value="center">center</option>
+            <option value="bottom" selected>bottom</option>
+        </select>
+    </div>
+
+    <script>
+    DOM.findAll("#hpos, #vpos").forEach(function(el, i, els) {
+        var area = DOM.find("#test-area");
+
+        el.on("change", function() {
+            var hpos = els[0].get(),
+                vpos = els[1].get();
+
+            area.popover(hpos + " " + vpos, hpos, vpos);
+        });
+    });
+
+    DOM.find("select").fire("change");
+    </script>
+</body>
+</html>

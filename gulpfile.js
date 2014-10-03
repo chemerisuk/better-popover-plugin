@@ -16,7 +16,7 @@ gulp.task("test", ["lint"], function(done) {
     }, done);
 });
 
-gulp.task("dev", ["lint"], function() {
+gulp.task("dev", function() {
     karma.start({
         configFile: karmaConfig,
         preprocessors: { "src/better-popover.js": "coverage" },
