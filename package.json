@@ -1,0 +1,30 @@
+{
+  "name": "better-popover",
+  "version": "0.0.1",
+  "description": "Popover plugin for better-dom",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp test",
+    "start": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chemerisuk/better-popover.git"
+  },
+  "author": "Maksim Chemerisuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chemerisuk/better-popover/issues"
+  },
+  "homepage": "https://github.com/chemerisuk/better-popover",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-jshint": "^1.8.5",
+    "jshint-stylish": "^1.0.0",
+    "karma": "^0.12.24",
+    "karma-coverage": "^0.2.6",
+    "karma-coveralls": "^0.1.4",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4"
+  }
+}

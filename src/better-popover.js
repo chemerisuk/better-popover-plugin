@@ -1,0 +1,3 @@
+(function(DOM) {
+
+}(window.DOM));
