@@ -4,7 +4,7 @@
             var popover = this.get("_popover"), css = {};
 
             if (!popover) {
-                popover = DOM.create("div[role=tooltip]").css("visibility", "hidden");
+                popover = DOM.create("div.better-popover").css("visibility", "hidden");
 
                 this.before(popover);
 
