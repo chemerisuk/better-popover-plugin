@@ -1,9 +1,10 @@
 (function(DOM) {
+
+
     DOM.extend("*", {
         popover: function(content, hpos, vpos) {
             var popover = this.get("_popover"),
                 css = {}, offset, popoverOffset;
-
 
             if (!popover) {
                 popover = DOM.create("div.better-popover").css("visibility", "hidden");
@@ -11,6 +12,8 @@
                 this.before(popover);
 
                 popover.css({
+                    // MUST set position:absolute for correct offset calculation
+                    "position": "absolute",
                     "z-index": 1 + (this.css("z-index") | 0)
                 });
 
@@ -25,6 +28,10 @@
                 offset = this.offset();
                 popoverOffset = popover.css("margin", "0").offset();
 
+                // position is "center" by default
+                hpos = hpos || "center";
+                vpos = vpos || "center";
+
                 switch(hpos) {
                 case "left":
                     css["margin-left"] = offset.left - popoverOffset.left;
@@ -32,7 +39,6 @@
 
                 case "center":
                     css["margin-left"] = offset.left - popoverOffset.left + (offset.width - popoverOffset.width) / 2;
-                    css["margin-top"] = offset.top - popoverOffset.top + (offset.height - popoverOffset.height) / 2;
                     break;
 
                 case "right":
@@ -45,6 +51,10 @@
                 switch(vpos) {
                 case "top":
                     css["margin-top"] = offset.top - popoverOffset.bottom;
+                    break;
+
+                case "center":
+                    css["margin-top"] = offset.top - popoverOffset.top + (offset.height - popoverOffset.height) / 2;
                     break;
 
                 case "bottom":

@@ -25,6 +25,13 @@ describe("popover", function() {
         expect(popover.child(0)).toBeDefined();
     });
 
+    it("sets position absolute inline", function() {
+        var link = DOM.create("a"),
+            popover = link.popover();
+
+        expect(popover.css("position")).toBe("absolute");
+    });
+
     it("respects parent element z-index", function() {
         var link = DOM.create("a"),
             popover = link.popover();

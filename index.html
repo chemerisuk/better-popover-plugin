@@ -105,6 +105,11 @@
                 vpos = els[1].get(),
                 code = DOM.format('el.popover("...", "{0}", "{1}")', [ hpos, vpos ]);
 
+            if (vpos === hpos) {
+                // handle shortcuts
+                code = DOM.format('el.popover("...", "{0}")', [ hpos ]);
+            }
+
             area.popover(code, hpos, vpos);
         });
     });
