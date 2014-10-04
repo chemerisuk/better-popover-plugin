@@ -12,9 +12,21 @@ gulp.task("lint", function() {
 });
 
 gulp.task("test", ["lint"], function(done) {
-    karma.start({
-        configFile: karmaConfig
-    }, done);
+    var config = { configFile: karmaConfig };
+
+    if (process.env.TRAVIS_JOB_NUMBER) {
+        config = {
+            configFile: karmaConfig,
+            preprocessors: { "src/better-popover.js": "coverage" },
+            reporters: ["coverage", "dots", "coveralls"],
+            coverageReporter: {
+                type: "lcovonly",
+                dir: "coverage/"
+            }
+        };
+    }
+
+    karma.start(config, done);
 });
 
 gulp.task("dev", function() {
@@ -27,16 +39,4 @@ gulp.task("dev", function() {
         background: true,
         singleRun: false
     });
-});
-
-gulp.task("travis", ["lint"], function(done) {
-    karma.start({
-        configFile: karmaConfig,
-        preprocessors: { "build/better-popover.js": "coverage" },
-        reporters: ["coverage", "dots", "coveralls"],
-        coverageReporter: {
-            type: "lcovonly",
-            dir: "coverage/"
-        }
-    }, done);
 });
