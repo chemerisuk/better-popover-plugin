@@ -4,8 +4,8 @@
 [LIVE DEMO](http://chemerisuk.github.io/better-popover/)
 
 ## Features
-* ability to positioning popover relative to the parent element
-* respects parent element `z-index`
+* ability to display a HTML relative to a parent element
+* increases parent element `z-index` by one
 
 ## Usage
 
