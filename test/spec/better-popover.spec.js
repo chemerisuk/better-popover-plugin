@@ -36,12 +36,49 @@ describe("popover", function() {
         expect(popover.css("z-index")).toBe("101");
     });
 
-    it("supports argument position", function() {
+    it("supports arguments hpos and vpos", function() {
         var link = DOM.create("a"),
+            popover = link.popover(),
             linkOffset = {left: 1, top: 1, right: 3, bottom: 5},
             popoverOffset = {left: 10, top: 10, right: 30, bottom: 50};
 
         spyOn(link, "offset").and.returnValue(linkOffset);
-        spyOn(link.popover(), "offset").and.returnValue(popoverOffset);
+        spyOn(popover, "offset").and.returnValue(popoverOffset);
+
+        link.popover("...", "left", "top");
+        expect(popover.css("margin-left")).toBe("-9px");
+        expect(popover.css("margin-top")).toBe("-49px");
+
+        link.popover("...", "left", "center");
+        expect(popover.css("margin-left")).toBe("-9px");
+        expect(popover.css("margin-top")).toBe("0px");
+
+        link.popover("...", "left", "bottom");
+        expect(popover.css("margin-left")).toBe("-9px");
+        expect(popover.css("margin-top")).toBe("-5px");
+
+        link.popover("...", "center", "top");
+        expect(popover.css("margin-left")).toBe("0px");
+        expect(popover.css("margin-top")).toBe("-49px");
+
+        link.popover("...", "center", "center");
+        expect(popover.css("margin-left")).toBe("0px");
+        expect(popover.css("margin-top")).toBe("0px");
+
+        link.popover("...", "center", "bottom");
+        expect(popover.css("margin-left")).toBe("0px");
+        expect(popover.css("margin-top")).toBe("-5px");
+
+        link.popover("...", "right", "top");
+        expect(popover.css("margin-left")).toBe("0px");
+        expect(popover.css("margin-top")).toBe("-49px");
+
+        link.popover("...", "right", "center");
+        expect(popover.css("margin-left")).toBe("0px");
+        expect(popover.css("margin-top")).toBe("0px");
+
+        link.popover("...", "right", "bottom");
+        expect(popover.css("margin-left")).toBe("0px");
+        expect(popover.css("margin-top")).toBe("-5px");
     });
 });

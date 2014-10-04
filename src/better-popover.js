@@ -31,6 +31,7 @@
 
                 case "center":
                     css["margin-left"] = offset.left - popoverOffset.left + (offset.width - popoverOffset.width) / 2;
+                    css["margin-top"] = offset.top - popoverOffset.top + (offset.height - popoverOffset.height) / 2;
                     break;
 
                 case "right":
@@ -46,10 +47,6 @@
                 switch(vpos) {
                 case "top":
                     css["margin-top"] = offset.top - popoverOffset.bottom;
-                    break;
-
-                case "center":
-                    css["margin-top"] = offset.top - popoverOffset.top + (offset.height - popoverOffset.height) / 2;
                     break;
 
                 case "bottom":

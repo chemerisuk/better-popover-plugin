@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>better-popover demo</title>
     <style>
+    html {
+        background: #CCC;
+    }
+
     head, title {
         display: block;
     }
@@ -11,6 +15,7 @@
     title {
         font-size: 2em;
         text-indent: 0.25em;
+        margin-bottom: 1em;
     }
 
     body {
@@ -18,6 +23,7 @@
         border: 1px solid;
         padding: 0;
         margin: 0;
+        background: white;
     }
 
     style[contentEditable] {
@@ -25,7 +31,12 @@
         white-space: pre;
         float: left;
         font-family: monospace;
-        margin-right: 2em;
+        margin-right: 3em;
+    }
+
+    style[contentEditable]:focus {
+        background: white;
+        outline: none;
     }
 
     #test-area:before, body:before {
@@ -43,8 +54,7 @@
         content: "body"
     }
     </style>
-    <style contentEditable>
-    /* page CSS (editable) */
+    <style contentEditable>    /* page CSS (editable) */
 
     #hpos, #vpos {
         padding: 0.25em;
@@ -57,7 +67,8 @@
     #test-area {
         background: yellow;
         width: 21.5em;
-        margin: 5em;
+        margin: 7em;
+        border: 1px solid;
     }
 
     .better-popover {
@@ -92,7 +103,7 @@
         el.on("change", function() {
             var hpos = els[0].get(),
                 vpos = els[1].get(),
-                code = DOM.format('el.popover("...", "{0}", "{1}")', [hpos, vpos]);
+                code = DOM.format('el.popover("...", "{0}", "{1}")', [ hpos, vpos ]);
 
             area.popover(code, hpos, vpos);
         });
