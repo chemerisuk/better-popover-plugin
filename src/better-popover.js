@@ -9,7 +9,6 @@
                 this.before(popover);
 
                 popover.css({
-                    "position": "absolute",
                     "z-index": 1 + (this.css("z-index") | 0)
                 });
 

@@ -2,7 +2,6 @@
   "name": "better-popover",
   "version": "0.0.1",
   "description": "Popover plugin for better-dom",
-  "main": "gulpfile.js",
   "scripts": {
     "test": "gulp test",
     "start": "gulp dev"
