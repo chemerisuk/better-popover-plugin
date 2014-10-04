@@ -1,7 +1,9 @@
 (function(DOM) {
     DOM.extend("*", {
         popover: function(content, hpos, vpos) {
-            var popover = this.get("_popover"), css = {};
+            var popover = this.get("_popover"),
+                css = {}, offset, popoverOffset;
+
 
             if (!popover) {
                 popover = DOM.create("div.better-popover").css("visibility", "hidden");
@@ -20,8 +22,8 @@
             }
 
             if (typeof hpos === "string") {
-                var offset = this.offset(),
-                    popoverOffset = popover.css("margin", "0").offset();
+                offset = this.offset();
+                popoverOffset = popover.css("margin", "0").offset();
 
                 switch(hpos) {
                 case "left":
@@ -40,9 +42,6 @@
             }
 
             if (typeof vpos === "string") {
-                var offset = this.offset(),
-                    popoverOffset = popover.css("margin", "0").offset();
-
                 switch(vpos) {
                 case "top":
                     css["margin-top"] = offset.top - popoverOffset.bottom;
