@@ -4,7 +4,7 @@
             var popover = this.get("_popover");
 
             if (!popover) {
-                popover = DOM.create("div.better-popover").css("visibility", "hidden");
+                popover = DOM.create("div.better-popover-plugin").css("visibility", "hidden");
 
                 this.before(popover);
 

@@ -1,5 +1,5 @@
 {
-  "name": "better-popover",
+  "name": "better-popover-plugin",
   "version": "0.5.0",
   "description": "Popover plugin for better-dom",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chemerisuk/better-popover.git"
+    "url": "https://github.com/chemerisuk/better-popover-plugin.git"
   },
   "author": "Maksim Chemerisuk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chemerisuk/better-popover/issues"
+    "url": "https://github.com/chemerisuk/better-popover-plugin/issues"
   },
-  "homepage": "https://github.com/chemerisuk/better-popover",
+  "homepage": "https://github.com/chemerisuk/better-popover-plugin",
   "devDependencies": {
     "better-dom-boilerplate": "git://github.com/chemerisuk/better-dom-boilerplate.git"
   }
