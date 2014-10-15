@@ -9,7 +9,6 @@
     "test",
     "src",
     "index.html",
-    "gulpfile.js",
     "package.json",
     "bower.json"
   ],
