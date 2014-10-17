@@ -1,10 +1,10 @@
-(function(DOM) {
+(function(DOM, undefined) {
     DOM.extend("*", {
         popover: function(content, hpos, vpos) {
             var popover = this.get("_popover");
 
             if (!popover) {
-                popover = DOM.create("div.better-popover").css("visibility", "hidden");
+                popover = DOM.create("div.better-popover-plugin").css("visibility", "hidden");
 
                 this.before(popover);
 
@@ -17,7 +17,7 @@
                 this.set("_popover", popover);
             }
 
-            if (typeof content === "string") {
+            if (content !== undefined) {
                 popover.set(content).show();
             }
 

@@ -1,15 +1,14 @@
 {
-  "name": "better-popover",
-  "version": "0.5.0",
+  "name": "better-popover-plugin",
+  "version": "0.5.1",
   "main": [
-    "dist/better-popover.js"
+    "dist/better-popover-plugin.js"
   ],
   "ignore": [
     ".*",
     "test",
     "src",
     "index.html",
-    "gulpfile.js",
     "package.json",
     "bower.json"
   ],
