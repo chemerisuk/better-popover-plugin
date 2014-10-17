@@ -1,6 +1,6 @@
 {
   "name": "better-popover-plugin",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Popover plugin for better-dom",
   "scripts": {
     "test": "gulp test --gulpfile node_modules/better-dom-boilerplate/gulpfile.js --cwd .",
