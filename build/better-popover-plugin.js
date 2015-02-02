@@ -1,4 +1,4 @@
-(function(DOM, undefined) {
+(function(DOM) {
     DOM.extend("*", {
         popover: function(content, hpos, vpos) {
             var popover = this.get("_popover");
@@ -17,8 +17,8 @@
                 this.set("_popover", popover);
             }
 
-            if (content !== undefined) {
-                popover.set(content).show();
+            if (content != null) {
+                popover.value(content).show();
             }
 
             if (typeof hpos === "string") {
