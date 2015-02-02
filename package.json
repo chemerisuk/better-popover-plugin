@@ -2,21 +2,26 @@
   "name": "better-popover-plugin",
   "version": "0.5.1",
   "description": "Popover plugin for better-dom",
-  "scripts": {
-    "test": "gulp test --gulpfile node_modules/better-dom-boilerplate/gulpfile.js --cwd .",
-    "start": "gulp dev --gulpfile node_modules/better-dom-boilerplate/gulpfile.js --cwd ."
-  },
+  "author": "Maksim Chemerisuk",
+  "license": "MIT",
+  "homepage": "https://github.com/chemerisuk/better-popover-plugin",
   "repository": {
     "type": "git",
     "url": "https://github.com/chemerisuk/better-popover-plugin.git"
   },
-  "author": "Maksim Chemerisuk",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/chemerisuk/better-popover-plugin/issues"
   },
-  "homepage": "https://github.com/chemerisuk/better-popover-plugin",
   "devDependencies": {
     "better-dom-boilerplate": "git://github.com/chemerisuk/better-dom-boilerplate.git"
+  },
+  "config": {
+    "gulp": "--gulpfile node_modules/better-dom-boilerplate/gulpfile.js --cwd ."
+  },
+  "scripts": {
+    "test": "gulp test $npm_package_config_gulp",
+    "start": "gulp dev $npm_package_config_gulp",
+    "release": "gulp release $npm_package_config_gulp",
+    "postrelease": "gulp gh-pages $npm_package_config_gulp"
   }
 }
