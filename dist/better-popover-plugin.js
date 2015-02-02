@@ -1,11 +1,11 @@
 /**
  * better-popover-plugin: Popover plugin for better-dom
- * @version 0.5.1 Fri, 17 Oct 2014 17:17:29 GMT
+ * @version 0.5.2 Mon, 02 Feb 2015 21:58:13 GMT
  * @link https://github.com/chemerisuk/better-popover-plugin
  * @copyright 2014 Maksim Chemerisuk
  * @license MIT
  */
-(function(DOM, undefined) {
+(function(DOM) {
     DOM.extend("*", {
         popover: function(content, hpos, vpos) {
             var popover = this.get("_popover");
@@ -24,8 +24,8 @@
                 this.set("_popover", popover);
             }
 
-            if (content !== undefined) {
-                popover.set(content).show();
+            if (content != null) {
+                popover.value(content).show();
             }
 
             if (typeof hpos === "string") {
